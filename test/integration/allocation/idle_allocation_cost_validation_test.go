@@ -35,11 +35,11 @@ func validateNonNegativeIdleCosts(t *testing.T, aggregate string, window string)
 		if idle, exists := allocations["__idle__"]; exists {
 			foundIdle = true
 
-			// instead for putting which values to check inside code, seeing them in one place might be better
 			costChecks := []struct {
 				name  string
 				value float64
 			}{
+				// Values we are checking if they are negative or not
 				{"total cost", idle.TotalCost},
 				{"CPU cost", idle.CPUCost},
 				{"RAM cost", idle.RAMCost},
